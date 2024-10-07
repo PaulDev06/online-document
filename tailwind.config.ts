@@ -9,11 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: '#1D4ED8',  // Custom primary color
+        secondary: '#FBBF24', // Custom secondary color
+        // You can define more colors as needed
+      },
+      textColor: {
+        primary: '#1D4ED8', // Set a global text color
+        secondary: '#FBBF24', // Set another global text color
       },
     },
   },
   plugins: [],
 };
 export default config;
+
+
