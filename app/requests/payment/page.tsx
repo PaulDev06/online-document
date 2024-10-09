@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import { useRouter } from 'next/navigation';
 
 export default function Payment() {
@@ -10,17 +11,23 @@ export default function Payment() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold mb-6">Payment</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
+      
+      {/* Title */}
+      <h1 className="text-4xl font-bold mb-8">Payment</h1>
 
-      <p className="mb-6">Amount Due: $100</p>
+      {/* Payment Details Card */}
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center">
+        <p className="text-xl mb-4">Amount Due: <span className="font-bold">$100</span></p>
 
-      <button
-        onClick={handlePayment}
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-      >
-        Pay Now
-      </button>
+        {/* Pay Now Button */}
+        <button
+          onClick={handlePayment}
+          className="w-full bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all"
+        >
+          Pay Now
+        </button>
+      </div>
     </div>
   );
 }

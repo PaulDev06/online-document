@@ -1,4 +1,5 @@
-'use client'
+'use client';
+
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
@@ -18,15 +19,15 @@ export default function UploadDocuments() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold mb-6">Upload Required Documents</h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
+      <h1 className="text-4xl font-bold mb-8">Upload Required Documents</h1>
 
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
-        <div className="mb-4">
+      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <div className="mb-6">
           <label className="block text-sm font-medium text-gray-700 mb-2">Upload Document</label>
           <input
             type="file"
-            className="w-full"
+            className="w-full border border-gray-300 rounded-lg py-2 px-3 focus:outline-none focus:border-blue-500"
             onChange={handleFileChange}
             required
           />
@@ -34,7 +35,7 @@ export default function UploadDocuments() {
 
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="w-full bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all"
         >
           Proceed to Payment
         </button>
