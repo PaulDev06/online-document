@@ -31,39 +31,50 @@ export default function EnterDetails() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold mb-6">Enter Details for {document}</h1>
-
-      <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Name</label>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
+      
+      {/* Title */}
+      <h1 className="text-4xl font-bold mb-8">Enter Details for {document}</h1>
+      
+      {/* Details Form */}
+      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-lg w-full max-w-lg">
+        <div className="mb-6">
+          <label className="block text-lg font-medium text-gray-700 mb-2">Name</label>
           <input
             type="text"
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+            className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500 text-lg"
             value={details.name}
             onChange={(e) => setDetails({ ...details, name: e.target.value })}
             required
           />
         </div>
 
-        <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700 mb-2">Country</label>
+        <div className="mb-6">
+          <label className="block text-lg font-medium text-gray-700 mb-2">Country</label>
           <input
             type="text"
-            className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+            className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500 text-lg"
             value={details.country}
             onChange={(e) => setDetails({ ...details, country: e.target.value })}
             required
           />
         </div>
 
+        {/* Proceed Button */}
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="w-full bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-all"
         >
           Proceed
         </button>
       </form>
+
+      {/* Optional Info Section (If Needed) */}
+      <div className="mt-12 max-w-2xl text-center">
+        <p className="text-gray-600">
+          Please double-check your details before proceeding. Ensure your name and country information is accurate to avoid processing delays.
+        </p>
+      </div>
     </div>
   );
 }
